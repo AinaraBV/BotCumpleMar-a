@@ -1,0 +1,35 @@
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+.ENV/
+
+# Archivos de dependencias
+*.log
+*.pot
+*.pyc
+
+# Configuración de IDEs y editores de código
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Variables de entorno y credenciales
+.env
+*.env
+config.json
+secrets.json
+
+# Archivos de Render u otras plataformas
+render.yaml
