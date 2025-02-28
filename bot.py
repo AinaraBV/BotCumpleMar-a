@@ -2,12 +2,13 @@ import logging
 import time
 import math
 import os
-import asyncio
+import asyncio 
 
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.constants import ChatAction
 from telegram.ext import (Application, CommandHandler, MessageHandler, filters,
                           ConversationHandler, CallbackContext)
+from flask import Flask
 
 # --------------------------------------------
 # ----------------- Constants ----------------
@@ -221,6 +222,15 @@ def main() -> None:
     )
     application.add_handler(conv_handler)
     application.run_polling()
+
+    # Simular un servidor web para evitar que Render lo cierre
+    app = Flask(__name__)
+    @app.route('/')
+    def home():
+        return "Bot corriendo en Render"
+    
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
 if __name__ == "__main__":
     main()
