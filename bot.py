@@ -135,7 +135,7 @@ async def monono_location(update: Update, context: CallbackContext) -> int:
 
     else:
         messages = [
-            user.first_name+'Pues parece que no has encontrado el lugar correcto...',
+            'Pues parece que no has encontrado el lugar correcto...',
             'Vuelve a intentarlo y si no lo encuentras, no te preocupes, tus amigos te ayudarán'
         ]
 
